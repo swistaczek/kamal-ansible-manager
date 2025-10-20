@@ -3,6 +3,7 @@ python = "3.13.1"
 pipx = "latest"
 "pipx:ansible-core" = "latest"
 "pipx:ansible-lint" = "latest"
+editorconfig-checker = "3.4.1"
 
 [env]
 _.python.venv = { path = ".venv", create = true }
@@ -33,6 +34,10 @@ run = "echo 'Setup complete! Virtual environment activated at .venv'"
 description = "Run ansible syntax check"
 run = "ansible-playbook playbook.yml --syntax-check"
 
+[tasks.format-check]
+description = "Check editorconfig compliance"
+run = "ec"
+
 [tasks.check]
 description = "Run all checks"
-depends = ["lint", "test"]
+depends = ["lint", "test", "format-check"]
