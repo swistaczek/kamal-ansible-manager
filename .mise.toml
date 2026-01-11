@@ -3,7 +3,7 @@ python = "3.13"
 pipx = "latest"
 "pipx:ansible-core" = "latest"
 "pipx:ansible-lint" = "latest"
-editorconfig-checker = "3.4.1"
+editorconfig-checker = "3.6.0"
 
 [env]
 _.python.venv = { path = ".venv", create = true }
